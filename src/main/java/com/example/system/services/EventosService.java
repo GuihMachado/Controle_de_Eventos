@@ -1,5 +1,7 @@
 package com.example.system.services;
 
+import java.util.Optional;
+
 import javax.persistence.EntityNotFoundException;
 
 import com.example.system.dtos.EventosDTO;
@@ -53,5 +55,12 @@ public class EventosService {
           throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Event not found");
         }
       }
+
+    public EventosDTO getEventosById(Long id) {
+        Optional<Eventos> op = repo.findById(id);
+        Eventos evt = op.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Event not found"));
+
+        return new EventosDTO(evt);
+    }
     
 }

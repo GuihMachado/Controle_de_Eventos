@@ -48,6 +48,7 @@ public class Eventos implements Serializable{
         this.enDate = dto.getEnDate();
         this.starTime = dto.getStarTime();
         this.endtime = dto.getEndtime();
+        this.email = dto.getEmail();
     }
     
     public LocalTime getEndtime() {
