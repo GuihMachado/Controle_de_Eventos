@@ -12,6 +12,8 @@ import com.example.system.repositories.EventosRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +25,11 @@ public class EventosService {
 
     @Autowired
     private EventosRepository repo;
+
+    public Page<EventosDTO> getEventos(PageRequest pageRequest){
+        Page<Eventos> list = repo.find(pageRequest);
+        return list.map(e -> new EventosDTO(e));
+    }
 
     public EventosDTO insert(EventosInsertDTO dto){
         Eventos entity = new Eventos(dto);
