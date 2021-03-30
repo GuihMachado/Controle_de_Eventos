@@ -1,6 +1,7 @@
 package com.example.system.controllers;
 
 import java.net.URI;
+import java.time.LocalDate;
 
 import com.example.system.dtos.EventosDTO;
 import com.example.system.dtos.EventosInsertDTO;
@@ -38,12 +39,13 @@ public class EventosController {
 		@RequestParam(value = "orderBy", defaultValue = "id") String orderBy,
 		@RequestParam(value = "name", defaultValue = "") String name,
 		@RequestParam(value = "place", defaultValue = "") String place,
-		@RequestParam(value = "description", defaultValue = "") String description
+		@RequestParam(value = "description", defaultValue = "") String description,
+		@RequestParam(value = "startdate", defaultValue = "01/01/2000") LocalDate startdate
 		
 	) {
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction),orderBy);
 		
-		Page<EventosDTO> list = service.getEventos(pageRequest, name, place, description);
+		Page<EventosDTO> list = service.getEventos(pageRequest, name, place, description, startdate);
 		return ResponseEntity.ok(list);
 	}
 	

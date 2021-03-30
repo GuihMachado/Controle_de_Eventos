@@ -1,7 +1,7 @@
 INSERT INTO Eventos (name, description, place, startdate, en_date, star_time, endtime, email) VALUES ('Evento1', 'Desc1', 'Lugar1', '2021-03-20', '2021-03-21', '16:30:00', '18:00:00', 'email1@gmail.com');
-INSERT INTO Eventos (name, description, place, startdate, en_date, star_time, endtime, email) VALUES ('jooj2', 'Desc2', 'Lugar1', '2021-03-22', '2021-03-23', '16:30:00', '18:00:00', 'email2@gmail.com');
+INSERT INTO Eventos (name, description, place, startdate, en_date, star_time, endtime, email) VALUES ('Festa2', 'Desc2', 'Lugar1', '2021-03-22', '2021-03-23', '16:30:00', '18:00:00', 'email2@gmail.com');
 INSERT INTO Eventos (name, description, place, startdate, en_date, star_time, endtime, email) VALUES ('Evento3', 'Desc3', 'Lugar1', '2021-03-23', '2021-03-24', '16:30:00', '18:00:00', 'email3@gmail.com');
-INSERT INTO Eventos (name, description, place, startdate, en_date, star_time, endtime, email) VALUES ('jaaj4', 'Desc4', 'Lugar2', '2021-03-25', '2021-03-27', '16:30:00', '18:00:00', 'email4@gmail.com');
+INSERT INTO Eventos (name, description, place, startdate, en_date, star_time, endtime, email) VALUES ('Balada4', 'Desc4', 'Lugar2', '2021-03-25', '2021-03-27', '16:30:00', '18:00:00', 'email4@gmail.com');
 INSERT INTO Eventos (name, description, place, startdate, en_date, star_time, endtime, email) VALUES ('Evento5', 'Desc5', 'Lugar2', '2021-03-20', '2021-03-21', '16:30:00', '18:00:00', 'email5@gmail.com');
 INSERT INTO Eventos (name, description, place, startdate, en_date, star_time, endtime, email) VALUES ('Evento6', 'Desc6', 'Lugar1', '2021-03-20', '2021-03-21', '16:30:00', '18:00:00', 'email1@gmail.com');
 INSERT INTO Eventos (name, description, place, startdate, en_date, star_time, endtime, email) VALUES ('Evento7', 'Desc7', 'Lugar2', '2021-03-22', '2021-03-23', '16:30:00', '18:00:00', 'email2@gmail.com');

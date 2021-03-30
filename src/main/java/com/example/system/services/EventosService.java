@@ -1,5 +1,6 @@
 package com.example.system.services;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 import javax.persistence.EntityNotFoundException;
@@ -26,8 +27,8 @@ public class EventosService {
     @Autowired
     private EventosRepository repo;
 
-    public Page<EventosDTO> getEventos(PageRequest pageRequest, String name, String place, String description){
-        Page<Eventos> list = repo.find(pageRequest, name, place, description);
+    public Page<EventosDTO> getEventos(PageRequest pageRequest, String name, String place, String description, LocalDate stardate){
+        Page<Eventos> list = repo.find(pageRequest, name, place, description, stardate);
         return list.map(e -> new EventosDTO(e));
     }
 
