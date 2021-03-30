@@ -26,8 +26,8 @@ public class EventosService {
     @Autowired
     private EventosRepository repo;
 
-    public Page<EventosDTO> getEventos(PageRequest pageRequest){
-        Page<Eventos> list = repo.find(pageRequest);
+    public Page<EventosDTO> getEventos(PageRequest pageRequest, String name, String place, String description){
+        Page<Eventos> list = repo.find(pageRequest, name, place, description);
         return list.map(e -> new EventosDTO(e));
     }
 

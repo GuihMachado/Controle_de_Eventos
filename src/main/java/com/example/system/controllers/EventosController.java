@@ -35,12 +35,15 @@ public class EventosController {
 		@RequestParam(value = "page", defaultValue = "0") Integer page,
 		@RequestParam(value = "linesPerPage", defaultValue = "6") Integer linesPerPage,
 		@RequestParam(value = "direction", defaultValue = "ASC") String direction,
-		@RequestParam(value = "orderBy", defaultValue = "id") String orderBy
+		@RequestParam(value = "orderBy", defaultValue = "id") String orderBy,
+		@RequestParam(value = "name", defaultValue = "") String name,
+		@RequestParam(value = "place", defaultValue = "") String place,
+		@RequestParam(value = "description", defaultValue = "") String description
 		
 	) {
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction),orderBy);
 		
-		Page<EventosDTO> list = service.getEventos(pageRequest);
+		Page<EventosDTO> list = service.getEventos(pageRequest, name, place, description);
 		return ResponseEntity.ok(list);
 	}
 	
