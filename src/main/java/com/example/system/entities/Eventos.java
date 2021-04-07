@@ -9,9 +9,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 import com.example.system.dtos.EventosInsertDTO;
 import com.fasterxml.jackson.annotation.JsonFormat;
+
+
 
 @Entity
 @Table(name="Eventos")
@@ -23,8 +26,13 @@ public class Eventos implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @NotBlank(message = "Nome não pode ser nulo")
     private String name;
+
+    @NotBlank(message = "Descrição não pode ser nula")
     private String description;
+
+    @NotBlank(message = "Local não pode ser nulo")
     private String place;
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate startdate;

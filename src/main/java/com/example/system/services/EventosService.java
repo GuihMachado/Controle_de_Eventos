@@ -33,9 +33,9 @@ public class EventosService {
     }
 
     public EventosDTO insert(EventosInsertDTO dto){
-        Eventos entity = new Eventos(dto);
-        entity = repo.save(entity);
-        return new EventosDTO(entity);
+            Eventos entity = new Eventos(dto);
+            entity = repo.save(entity);
+            return new EventosDTO(entity);
     }
 
     public void delete(Long id){

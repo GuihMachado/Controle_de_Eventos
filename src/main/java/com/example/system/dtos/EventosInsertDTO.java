@@ -3,12 +3,19 @@ package com.example.system.dtos;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import javax.validation.constraints.NotBlank;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class EventosInsertDTO {
     
+    @NotBlank(message = "Nome não pode ser nulo")
     private String name;  
+
+    @NotBlank(message = "Descrição não pode ser nula")
     private String description;
+
+    @NotBlank(message = "Local não pode ser nulo")
     private String place;
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate startdate;

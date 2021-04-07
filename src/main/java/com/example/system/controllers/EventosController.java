@@ -3,6 +3,8 @@ package com.example.system.controllers;
 import java.net.URI;
 import java.time.LocalDate;
 
+import javax.validation.Valid;
+
 import com.example.system.dtos.EventosDTO;
 import com.example.system.dtos.EventosInsertDTO;
 import com.example.system.dtos.EventosUpdateDTO;
@@ -49,11 +51,8 @@ public class EventosController {
 		return ResponseEntity.ok(list);
 	}
 	
-	
-	
-	
 	@PostMapping
-	public ResponseEntity<EventosDTO> insert(@RequestBody EventosInsertDTO insertDto){
+	public ResponseEntity<EventosDTO> insert(@RequestBody @Valid EventosInsertDTO insertDto){
 		EventosDTO dto = service.insert(insertDto); 
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();
 		return ResponseEntity.created(uri).body(dto);
@@ -76,5 +75,4 @@ public class EventosController {
         EventosDTO dto = service.getEventosById(id);
         return ResponseEntity.ok(dto);
     }
-
 }
